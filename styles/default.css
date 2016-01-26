@@ -1,0 +1,305 @@
+@CHARSET "UTF-8";
+@import url(reset.css);
+/*разметка каркаса*/
+.header {
+	height: 200px;
+	background-color: #829DBA;
+	position: relative;
+	background-image: url(../img/headerImg.png);
+	background-repeat: no-repeat;
+	background-position: 2px 0;
+}
+.layout {
+	width: 1024px;
+	margin: auto;
+	background-image: url(../img/backgroundline.png);
+	overflow: hidden;
+}
+.sidebar, .content {
+	float: left;
+}
+.sidebar {
+	width: 180px;
+	background-color: #4B7698;
+}
+.content {
+	width: 844px;
+	background-color: #7BB4C8;
+}
+.footer {
+	float: left;
+	height: 35px;
+	width: 984px;
+	background-color: #1A4771;
+	padding: 20px;
+}
+.containerColumn {
+	margin: 20px;
+}
+body {
+	font-family: Arial sans-serif;
+}
+/*конец разметки каркаса*/
+/*хэдер*/
+.header a {
+	height: 80px;
+	width: 235px;
+	position: absolute;
+	top: 40px;
+	left: 20px;
+	margin: auto;
+	/*outline: solid red 1px;*/
+	font-size:  4.5em;
+	color: #14D17F;
+	text-decoration: none;
+}
+.commonText {
+	text-shadow: 0 1px 0 #eee, 3px 3px 3px #000;
+	font-weight: bolder;
+	font-style: italic;
+	color: #FFC720;
+}
+#autorize {
+	position: absolute;
+	right: 20px;
+	top: 65%;
+/*	background-color: #1D446F;*/
+	padding: 10px;
+	border-radius: 30%;
+}
+#autorize li {
+	float: left;
+	font-size:  1.5em;
+	margin-left: 10px;
+	cursor: pointer;
+}
+/*конец хэдера*/
+/*левая колонка*/
+#menu {
+	/*margin-top: 7em;*/
+}
+#menu li {
+	margin-bottom: 0.9em;
+}
+#menu a {
+	text-decoration: none;
+	font-size: 0.9em;
+	color: #FFC720;
+}
+#usersOnline {
+	margin-top: 3em;
+
+}
+#usersOnline h3{
+	font-size: 1em;
+	margin-bottom: 1em;
+	letter-spacing: 1px;
+}
+.wrapperUser {
+	position: relative;
+	letter-spacing: 1px;
+}
+.clear {
+	clear: both;
+}
+.wrapperUser img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.wrapperUser span {
+	font-size: 0.8em;
+	margin-left: 2px;
+	position: absolute;
+	left: 32px;
+	margin-top: 11px;
+	margin-bottom: auto;
+}
+.wrapperUser a {
+	color: #FFC720;
+	text-decoration: none;
+}
+/*конец, левая колонка*/
+/*футер*/
+	.footer {
+		position: relative;
+	}
+	.footer > span {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 1.2em auto 0 auto;
+		width: 160px;
+		font-size: 1.4em;
+		outline: solid red 0px;
+	}
+/*конец, футер*/
+/*таблица изображений и навигация*/
+#tableWrapper {
+	outline: solid red 0px;
+}
+.itemWrapper {
+	padding: 5px;
+	background-color: #fff;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	width: 186px;
+	height: 227px;
+	background-color: #C7C7C7;
+	float: left;
+	outline: solid red 0px;
+}
+.itemWrapper img {
+	width: 186px;
+	height: 186px;
+	margin: 5px 0 2px 0;
+	outline: solid red 0px;
+}
+.itemWrapper a {
+	text-decoration: none;
+	color: #000;
+}
+/*навигация*/
+.simpleWrapper {
+	position: relative;
+	height: 50px;
+	outline: solid red 0px;
+}
+#wrapperImagesPaginator {
+	float: left;
+	position: absolute;
+	left: 50%;
+}
+#imagesPaginator {
+	float: left;
+	padding: .5em;
+	background-color: #7BB4C8;
+	position: relative;
+	left: -50%;
+	width: 100%;
+	outline: solid red 0px;
+}
+#imagesPaginator li {
+	float: left;
+	margin-left: .7em;
+}
+#imagesPaginator li a {
+	text-decoration: none;
+	font-size: 1.6em;
+	display: block;
+	cursor: pointer;
+	padding: .3em;
+	color: #FFC720;
+	background-color: #C7C7C7;
+}
+#imagesPaginator li a:hover {
+	background-color: #2F567F;
+	color: #fff;
+}
+.activeImgPgItem {
+	background-color: #2F567F !important;
+	color: #fff !important;
+}
+.blockedImgPgItem, .blockedImgPgItem:hover {
+	color: #565247 !important;
+	background-color: #87827C !important;
+}
+/*конец, таблица изображений и навигация*/
+/*фрма регистрации*/
+#wrapperSignUpForm {
+	position: relative;
+	width: 600px;
+	height: 350px;
+	outline: solid red 0px;
+}
+#signUpForm, #signInForm {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #7BB4C8;
+	margin: auto;
+	outline: solid green 0px;
+}
+#signUpForm {
+	width: 530px;
+	height: 220px;
+}
+.wrapperLineForm {
+	position: relative;
+	margin-bottom: 1em;
+	height: 2em;
+	outline: solid red 0px;
+}
+#signUpForm label, #signInForm label {
+	position: absolute;
+	margin: auto .7em auto 0;
+	top: 0;
+	bottom: 0;
+	display: block;
+	float: left;
+	height: 1.5em;
+	outline: solid red 0px;
+	font-size: 1.3em;
+}
+#signUpForm label {
+	width: 280px;
+}
+#signUpForm input, #signInForm input {
+	position: absolute;
+	height: 1.5em;
+	border-radius: 5px;
+	color: #1A4771;
+	font-weight: bold;
+	font-style: italic;
+	background-color: #C7C7C7;
+	font-size: 1em;
+	vertical-align: bottom;
+}
+#signUpForm input {
+	left: 280px;
+	width: 250px;
+}
+#signUpForm button, #signInForm button {
+	border-radius: 5px;
+	margin-top: 0;
+	margin-right: 1.5em;
+	color: #1A4771;
+	font-weight: bold;
+	font-style: italic;
+	background-color: #C7C7C7;
+	font-size: 1em;
+}
+.reqStar {
+	color: red;
+}
+.errorMessage {
+	color: red;
+	font-weight: bold;
+	text-shadow: none;
+}
+/*конец, форма регистрации*/
+/*форма авторизации*/
+#wrapperSignInForm {
+	position: relative;
+	width: 380px;
+	height: 170px;
+	outline: solid red 0px;
+}
+#signInForm {
+	width: 275px;
+	height: 125px;
+}
+#signInForm label {
+	width: 120px;
+}
+#signInForm input {
+	left: 120px;
+	width: 160px;
+}
+/*конец, форма авторизации*/
