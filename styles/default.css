@@ -303,3 +303,116 @@ body {
 	width: 160px;
 }
 /*конец, форма авторизации*/
+/*Альбом*/
+/*Заголовок*/
+#titleImg {
+	font-size: 2em;
+	margin-bottom: 8px;
+}
+/*Конец, заголовок*/
+/*Слайдер*/
+#sleder {
+	overflow: hidden;
+}
+#leftArrow, #rightArrow {
+	width: 62px;
+	cursor: pointer;
+}
+#leftArrow {
+	background-image: url(../img/leftArrow.png);
+}
+#rightArrow {
+	background-image: url(../img/rightArrow.png);
+}
+#leftArrow:hover {
+	background-image: url(../img/leftArrowHover.png);
+}
+#rightArrow:hover {
+	background-image: url(../img/rightArrowHover.png);
+}
+#image {
+	width: 680px;
+}
+#image img {
+	width: inherit;
+	height: inherit;
+}
+.itemSlider {
+	height: 430px;
+	float: left;
+	outline: solid red 0px;
+}
+/*Конец, слайдер*/
+/*Блок оценки*/
+#followBlock {
+	font-size: 1.5em;
+	height: 40px;
+	margin-top: 10px;
+}
+#totallMark {
+	color: red;
+	font-style: normal;
+	text-shadow: none;
+	position: relative;
+	top: 3px;
+}
+#marked {
+	display: block;
+	height: 40px !important;
+	width: 40px;
+	background-image: url(../img/add5.png);
+	outline: solid red 0px;
+}
+#totallMarkLabel, #totallMark, #followAlbom {
+	vertical-align: middle;
+}
+#followAlbom {
+	margin-left: 20px;
+}
+.itemFollowBlock {
+	float: left;
+	height: 100%;
+	margin-right: 5px;
+}
+#followBlock a {
+	text-decoration: none;
+}
+/*Конец, блок оценки*/
+/*Конец, альбом*/
+/*Блок комментариев*/
+#commentBlock {
+
+}
+.addCommentForm * {
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+.commentFile {
+	display: none;
+}
+.addingText {
+	width: 400px;
+	color: #000;
+	border-radius: 5px;
+}
+.addFileBtn {
+	display: block;
+	height: 32px;
+	width: 32px;
+	background-image: url(../img/addFile.png);
+}
+.sendCommentBtn {
+	display: inline-block;
+	padding: 5px 5px 8px 5px;
+	background-color: #C7C7C7;
+	border-radius: 5px;
+}
+.sendCommentBtn:hover {
+	background-color: #1A4771;
+	color: white;
+}
+.itemLineBtnCommentForm {
+	float: left;
+	cursor: pointer;
+}
+/*Конец, блок комментариев*/

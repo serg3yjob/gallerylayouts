@@ -3,8 +3,8 @@ $(init);
 //Функция выполняющаяся после загрузки страницы
 function init() {
 	// setEqualHeight($(".sidebar, .content"));
-	initBtnSignUpForm();
 	initDialogSignUpInForm();
+	initAlbomPage();
 }
 
 //Установка колонкам однинаковой высоты
@@ -73,7 +73,7 @@ function initDialogSignUpInForm(){
 	}
 	});
 	$('#wrapperSignInForm').dialog({
-	height: 250,
+	height: 320,
 	width: 420,
 	autoOpen: false,
 	resizable: false,
@@ -126,7 +126,57 @@ function errorMsgValidFormOutput(error, element) {
 	var errorText = error.text();
 	errorPlace.append(errorText);
 }
-//Инициализировать кнопки jQuery для формы регистрации
-function initBtnSignUpForm(){
-
+// Инициализация страницы альбома
+function initAlbomPage() {
+	$('#sendCommentBtn').click(handelSubmitForm);
+	$('#commentFile').change(handelChangeFile);
+	$('#addFileBtn').click(handelClickFileBtn);
+}
+var valueCommentFile = '';
+// Обработка отправки комментария
+function handelSubmitForm(event){
+	var target = $(event.currentTarget);
+	var commentText = target.parent().find('textarea').val();
+	if(commentText.length > 0 && !commentText.match(/^\s*$/)){
+		target.parent().submit();
+	}
+}
+// Добавлениеп файла
+function handelChangeFile(event) {
+	var target = $(event.currentTarget);
+	if(valueCommentFile.length == 0){
+		$('<img src="img/attachment.png" class="imgCommentFile itemLineBtnCommentForm" title="Добавленный файл"/>').insertBefore(target);
+		$('imgCommentFile').click(handelClickFileBtn);
+		target.parent().find('img').click(function() {
+			$('#confirmDeleteFile').dialog({
+				height: 160,
+				width: 300,
+				autoOpen: false,
+				resizable: false,
+				buttons: [ {
+								text: 'Удалить',
+								click: function() {
+									target.parent().find('img').remove();
+									target.val('');
+									$('#confirmDeleteFile').dialog('close');
+							}
+							}, {
+								text: 'Отмена',
+								click: function() {
+									$('#confirmDeleteFile').dialog('close');
+								}
+							}
+						]
+			});
+			$('#confirmDeleteFile').dialog('open');
+			$('#confirmDeleteFile').css('display', 'block');
+		});
+	}
+}
+// Щелчок по кнопке "Добавить файл", нужно для того чтобы запомнить добавленное значение для файла
+// в глобальной переменной
+function handelClickFileBtn(event){
+	var target = $(event.currentTarget);
+	var valueFile = target.parent().find('input').val();
+	valueCommentFile = valueFile;
 }
