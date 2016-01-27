@@ -390,7 +390,7 @@ body {
 .commentFile {
 	display: none;
 }
-.addingText {
+.addingText, .contentComment{
 	width: 400px;
 	color: #000;
 	border-radius: 5px;
@@ -401,18 +401,70 @@ body {
 	width: 32px;
 	background-image: url(../img/addFile.png);
 }
-.sendCommentBtn {
-	display: inline-block;
+.sendCommentBtn, .hederComment, .answerCommentBtn {
 	padding: 5px 5px 8px 5px;
 	background-color: #C7C7C7;
 	border-radius: 5px;
 }
-.sendCommentBtn:hover {
+.sendCommentBtn:hover, .answerCommentBtn:hover  {
 	background-color: #1A4771;
 	color: white;
 }
 .itemLineBtnCommentForm {
 	float: left;
 	cursor: pointer;
+}
+.commentWrapper {
+	border: solid #1A4771;
+	padding: 5px;
+	width: 610px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+.answerCommentBtn {
+	width: 82px;
+	margin-top: 4px;
+}
+.contentComment {
+	color: auto;
+	background-color: white;
+	padding: 5px;
+	text-shadow: none;
+	width: 600px;
+}
+.coomentUser {
+	
+}
+.hederComment {
+	width: 600px;
+	height: 17px;
+	position: relative;
+	margin-bottom: 3px;
+}
+.hederComment div {
+	float: left;
+}
+.commentAttachment {
+	position: absolute;
+	right: 0;
+	top: -10px;
+}
+.answerCommentBtn {
+	cursor: pointer;
+}
+.layerComment2 {
+	margin-left: 40px;
+}
+.layerComment3 {
+	margin-left: 80px;
+}
+.layerComment4 {
+	margin-left: 120px;
+}
+.layerComment5 {
+	margin-left: 160px;
+}
+.layerComment6 {
+	margin-left: 180px;
 }
 /*Конец, блок комментариев*/
