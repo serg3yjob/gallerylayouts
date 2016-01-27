@@ -30,22 +30,19 @@
 				<div id="menu" class="commonText">
 					<ul>
 						<li>
-							<a href="#">Все изображения</a>
+							<a href="default.html">Все изображения</a>
+						</li>
+						<li class="ativeItemMinu">
+							<a href="albom.html">Мой альбом</a>
 						</li>
 						<li>
-							<a href="#">Мой альбом</a>
+							<a href="subscribs.html">Мои подписки</a>
 						</li>
 						<li>
-							<a href="#">Мои подписки</a>
+							<a href="settings.html">Мои настройки</a>
 						</li>
 						<li>
-							<a href="#">Мои настройки</a>
-						</li>
-						<li>
-							<a href="#">Пользователи</a>
-						</li>
-						<li>
-							<a href="#"></a>
+							<a href="administrate.html">Пользователи</a>
 						</li>
 					</ul>
 				</div>
@@ -90,6 +87,14 @@
 			<div class="containerColumn">
 			<!-- Начало контейнера для всех страниц -->
 <!-- ================================================================================================================================================================================================================================================================ -->			
+				<div id="wrapperAddImage">
+					<div class="itemAddImage commonText">Добавить изображения</div>
+					<form class="itemAddImage" action="default.html" id="addImageForm" type="post" enctype="multipart/form-data">
+						<label for="imgFiles" class="addFileBtn" title="Добавить файл"></label>
+						<input id="imgFiles" type="file" name="imageFiles" multiple="multiple"/>						
+					</form>
+				</div>
+				<div class="clear"></div>
 				<h2 id="titleImg" class="commonText">Заголовок для изображения</h2>
 				<div div="albomWrapper">
 					<div id="slider">
@@ -116,11 +121,12 @@
 					</div>
 					<div id="commentBlock">
 						<div id="addComment">
-							<form id="addCommentForm" class="addCommentForm" action="" method="post" enctype="multipart/form-data">
+							<form class="addCommentForm" action="" method="post" enctype="multipart/form-data">
 								<textarea name="comment" class="addingText commonText" placeholder="Введите комментарий" rows="4"></textarea><br/>
-								<div id="sendCommentBtn" class="sendCommentBtn commonText itemLineBtnCommentForm">Добавить комментарий</div>
-								<label for="commentFile" id="addFileBtn" class="addFileBtn itemLineBtnCommentForm" title="Добавить файл"></label>
+								<div class="sendCommentBtn commonText itemLineBtnCommentForm">Добавить комментарий</div>
+								<label for="commentFile" class="addFileBtn itemLineBtnCommentForm" title="Добавить файл"></label>
 								<input id="commentFile" class="commentFile" type="file" name="commentFile" />
+								<input type="hidden" name="imageId" value=""/>
 							</form>
 						</div>
 						<div class="clear"></div>
@@ -136,7 +142,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn" data-comment-id="1">Ответить</div>
 								</div>
 							</div>
 							<div class="commentWrapper layerComment2">
@@ -150,7 +156,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn"  data-comment-id="2">Ответить</div>
 								</div>
 							</div>
 							<div class="commentWrapper layerComment3">
@@ -164,7 +170,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn"  data-comment-id="3">Ответить</div>
 								</div>
 							</div>
 							<div class="commentWrapper layerComment4">
@@ -178,7 +184,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn"  data-comment-id="4">Ответить</div>
 								</div>
 							</div>
 							<div class="commentWrapper layerComment5">
@@ -192,7 +198,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn"  data-comment-id="5">Ответить</div>
 								</div>
 							</div>
 							<div class="commentWrapper layerComment6">
@@ -206,7 +212,7 @@
 								</div>
 								<div class="comment commonText">
 									<div class="contentComment">Для того, чтобы оставить («опубликовать») сообщение на веб-форуме, </div>
-									<div class="answerCommentBtn">Ответить</div>
+									<div class="answerCommentBtn"  data-comment-id="6">Ответить</div>
 								</div>
 							</div>																												
 						</div>

@@ -75,11 +75,28 @@ body {
 }
 /*конец хэдера*/
 /*левая колонка*/
+.ativeItemMinu, #menu li:hover {
+	background-color: #1A4771;
+	padding: 5px 0px 10px 30px;
+	margin-top: 20px !important;
+	position: relative;
+	width: 149px;
+	left: -19px;
+	transition: all .25s ease-in-out;
+}
+.ativeItemMinu > a, #menu li:hover > a  {
+	color: #fff !important;
+	transition: all .5s ease-in-out;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
 #menu {
-	/*margin-top: 7em;*/
+	height: 210px;
 }
 #menu li {
 	margin-bottom: 0.9em;
+	cursor: pointer;
 }
 #menu a {
 	text-decoration: none;
@@ -304,6 +321,24 @@ body {
 }
 /*конец, форма авторизации*/
 /*Альбом*/
+/*Добавление изображения*/
+.itemAddImage {
+	float: left;
+	font-size: 2em;
+}
+.itemAddImage label {
+	margin-bottom: 10px;
+	position: relative;
+	bottom: -5px;
+	left: 5px;
+}
+#imgFiles {
+	display: none;
+}
+.addFileBtn {
+	cursor: pointer;
+}
+/*Конец, добавление изображения*/
 /*Заголовок*/
 #titleImg {
 	font-size: 2em;
@@ -401,25 +436,30 @@ body {
 	width: 32px;
 	background-image: url(../img/addFile.png);
 }
-.sendCommentBtn, .hederComment, .answerCommentBtn {
+.sendCommentBtn, .hederComment, .answerCommentBtn, #cancelAnswer {
 	padding: 5px 5px 8px 5px;
 	background-color: #C7C7C7;
 	border-radius: 5px;
 }
-.sendCommentBtn:hover, .answerCommentBtn:hover  {
+.sendCommentBtn:hover, .answerCommentBtn:hover, #cancelAnswer:hover {
 	background-color: #1A4771;
 	color: white;
+}
+#addCommentFormAnswer {
+	width: 400px !important;
+	margin-top: 5px;
 }
 .itemLineBtnCommentForm {
 	float: left;
 	cursor: pointer;
 }
-.commentWrapper {
+.commentWrapper, #addCommentFormAnswer {
 	border: solid #1A4771;
 	padding: 5px;
 	width: 610px;
 	border-radius: 5px;
 	margin-bottom: 5px;
+	overflow: hidden;
 }
 .answerCommentBtn {
 	width: 82px;
@@ -447,10 +487,16 @@ body {
 .commentAttachment {
 	position: absolute;
 	right: 0;
-	top: -10px;
+	top: -5px;
+}
+#addCommentFormAnswer textarea {
+	width: 98% !important;
 }
 .answerCommentBtn {
 	cursor: pointer;
+}
+.layerComment1 {
+	margin-left: 0px;
 }
 .layerComment2 {
 	margin-left: 40px;

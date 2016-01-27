@@ -128,9 +128,32 @@ function errorMsgValidFormOutput(error, element) {
 }
 // Инициализация страницы альбома
 function initAlbomPage() {
-	$('#sendCommentBtn').click(handelSubmitForm);
-	$('#commentFile').change(handelChangeFile);
-	$('#addFileBtn').click(handelClickFileBtn);
+	$(document).delegate('.sendCommentBtn', 'click', handelSubmitForm);
+	$(document).delegate('.commentFile', 'change', handelChangeFile);
+	$(document).delegate('.addFileBtn', 'click', handelClickFileBtn);
+	// Обработка вывода формы добавления ответа к комментарию
+	$('.answerCommentBtn').click(function(event) {
+		$('#addCommentFormAnswer').remove();
+		var htmlFormAnswerComment;
+		var parentCommentId = $(event.currentTarget).attr('data-comment-id');
+		var htmlFormAnswerComment = '' +
+		'<form id="addCommentFormAnswer" class="addCommentForm" action="" method="post" enctype="multipart/form-data">' +
+			'<textarea name="comment" class="addingText commonText" placeholder="Введите комментарий" rows="4"></textarea><br/>' +
+			'<div class="sendCommentBtn commonText itemLineBtnCommentForm">Добавить комментарий</div>' +
+			'<div id="cancelAnswer" class="commonText itemLineBtnCommentForm">Отмена</div>' +
+			'<label for="commentFileAnswer" id="addFileBtn" class="addFileBtn itemLineBtnCommentForm" title="Добавить файл"></label>' +
+			'<input id="commentFileAnswer" class="commentFile" type="file" name="commentFile" />' +
+			'<input type="hidden" name="parentCommentId" value="' + parentCommentId + '"/>' +
+		'</form>';
+		$(event.currentTarget).parent().parent().append(htmlFormAnswerComment);
+		$('#cancelAnswer').click(function(event) {
+			$(event.currentTarget).parent().remove();
+		});
+	});
+	// Обработка загрузки файлов изображений
+	$('#imgFiles').change(function(event) {
+		$(event.currentTarget).parent().submit();
+	});
 }
 var valueCommentFile = '';
 // Обработка отправки комментария
