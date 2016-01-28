@@ -87,7 +87,26 @@
 			<div class="containerColumn">
 			<!-- Начало контейнера для всех страниц -->
 <!-- ================================================================================================================================================================================================================================================================ -->			
-				
+				<h2 class="commonText headerPage">Настройки</h2>
+				<form id="privateUserSettings" action="" method="post" enctype="multipart/form-data">
+					<div id="settingsImageAvatarDiv">
+						<label id="settingsAvataLabel" for="settingsAvatarFile" title="Щелкните чтобы изменить аватар">
+							<img id="settingsImageAvatar" src="img/userAvatars/3.jpg"/>
+						</label>
+						<a href="changeemail.html">
+							<div class="commonText userSettingsChangeEmail">Изменить e-mail</div>
+						</a>
+						<a href="changepassword.html">
+							<div class="commonText userSettingsChangePassword">Изменить пароль</div>
+						</a>						
+					</div>
+					<div id="contentSettings">
+						<div class="wrapperLineUserSettingsForm commonText"><label class="labelUserSettings">Ваше имя:</label><label class="labelInfoUserSettings">Пользователь 1</label></div>
+						<div class="wrapperLineUserSettingsForm  commonText"><label class="labelUserSettings">Почта:</label><label class="labelInfoUserSettings">a.sh.s_reg@mail.ru</label></div>
+						<div class="wrapperLineUserSettingsForm  commonText"><label class="labelUserSettings">Дата регистрации:</label><label class="labelInfoUserSettings">28.01.2016</label></div>						
+					</div>
+					<input id="settingsAvatarFile" type="file" />
+				</form>
 			<!-- Звершение контейнера для всех страниц -->
 <!-- ================================================================================================================================================================================================================================================================ -->
 			</div>

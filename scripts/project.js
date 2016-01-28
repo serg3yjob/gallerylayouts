@@ -5,6 +5,8 @@ function init() {
 	// setEqualHeight($(".sidebar, .content"));
 	initDialogSignUpInForm();
 	initAlbomPage();
+	initAdministratePage();
+	initUserSettingsPage();
 }
 
 //Установка колонкам однинаковой высоты
@@ -202,4 +204,23 @@ function handelClickFileBtn(event){
 	var target = $(event.currentTarget);
 	var valueFile = target.parent().find('input').val();
 	valueCommentFile = valueFile;
+}
+function initAdministratePage() {
+	$('#serchAdminUserBtn').click(function(event) {
+		var target = $(event.currentTarget).parent().find('input');
+		textSerch = target.val();
+		if(textSerch.length > 0 && !textSerch.match(/^\s*$/)){
+			target.parent().submit();
+		}
+	});
+	var tempUserList = ['Пользоватлеь 1', 'Пользоватлеь 2', 'Пользоватлеь 3', 'Пользоватлеь 4', 'Пользоватлеь 5', ];
+	$('#serchAdminUserInput').autocomplete({
+		source: tempUserList
+	});
+}
+function initUserSettingsPage() {
+	// Обработка загрузки файла аватара
+	$('#settingsAvatarFile').change(function(event) {
+		$(event.currentTarget).parent().submit();
+	});
 }

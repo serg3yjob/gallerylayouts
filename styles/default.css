@@ -25,6 +25,7 @@
 .content {
 	width: 844px;
 	background-color: #7BB4C8;
+	min-height: 500px;
 }
 .footer {
 	float: left;
@@ -253,7 +254,8 @@ body {
 	height: 2em;
 	outline: solid red 0px;
 }
-#signUpForm label, #signInForm label {
+#signUpForm label, #signInForm label
+{
 	position: absolute;
 	margin: auto .7em auto 0;
 	top: 0;
@@ -269,6 +271,10 @@ body {
 }
 #signUpForm input, #signInForm input {
 	position: absolute;
+	vertical-align: bottom;
+}
+/*В том числе и для input формы поиска списка пользователей в административном интерфейсе*/
+#signUpForm input, #signInForm input,  #serchAdminUserInput{
 	height: 1.5em;
 	border-radius: 5px;
 	color: #1A4771;
@@ -276,7 +282,6 @@ body {
 	font-style: italic;
 	background-color: #C7C7C7;
 	font-size: 1em;
-	vertical-align: bottom;
 }
 #signUpForm input {
 	left: 280px;
@@ -311,6 +316,7 @@ body {
 #signInForm {
 	width: 275px;
 	height: 125px;
+	/*position: relative;*/
 }
 #signInForm label {
 	width: 120px;
@@ -318,6 +324,13 @@ body {
 #signInForm input {
 	left: 120px;
 	width: 160px;
+}
+.forgotPassword {
+	font-size: .5em;
+	color: #1A4771;
+	text-shadow: none;
+	position: relative;
+	left: 90%;
 }
 /*конец, форма авторизации*/
 /*Альбом*/
@@ -436,12 +449,13 @@ body {
 	width: 32px;
 	background-image: url(../img/addFile.png);
 }
-.sendCommentBtn, .hederComment, .answerCommentBtn, #cancelAnswer {
+/*Кнопки используемые в т.ч. и на страницах 'albom', 'settings', 'subscribs'*/
+.sendCommentBtn, .unsibscribeBtn, .userSettingsChangePassword, .userSettingsChangeEmail, .hederComment, .answerCommentBtn, #cancelAnswer {
 	padding: 5px 5px 8px 5px;
 	background-color: #C7C7C7;
 	border-radius: 5px;
 }
-.sendCommentBtn:hover, .answerCommentBtn:hover, #cancelAnswer:hover {
+.sendCommentBtn:hover, .userSettingsChangePassword:hover, .userSettingsChangeEmail:hover, .unsibscribeBtn:hover, .answerCommentBtn:hover, #cancelAnswer:hover {
 	background-color: #1A4771;
 	color: white;
 }
@@ -514,3 +528,171 @@ body {
 	margin-left: 180px;
 }
 /*Конец, блок комментариев*/
+/*Административный интерфейс*/
+.headerPage {
+	font-size: 2em !important;
+	margin-bottom: 10px;
+}
+#serchAdminUserInput {
+	width: 680px;
+	border: none;
+	padding-left: 20px;
+}
+#serchAdminUserBtn {
+	position: absolute;
+	top: -6px;
+	right: 80px;
+	cursor: pointer !important;
+}
+#resultListAdminUserSerch {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.itemResultAdminUserList {
+	float: left;
+	height: 80px;
+	text-align: center;
+	vertical-align: baseline;
+	border-style: solid;
+	border-color: #1A4771;
+}
+.headerResultAdminUserList {
+	height: 20px !important;
+	border-bottom-width: medium;
+	padding: 0px 0px 0px 0px !important;
+}
+.itemResultAdminUserListAvatar {
+	width: 180px;
+}
+.itemResultAdminUserListDate {
+	width: 180px;
+	border-right-width: medium;
+	border-left-width: medium;
+	padding-top: 45px;
+	height: 45px;
+}
+.itemResultAdminUserListIsActivated {
+	border-right-width: medium;
+	width: 170px;
+	padding-top: 40px;
+	height: 50px;
+}
+.itemResultAdminUserListIsBlocked {
+	width: 170px;
+	padding-top: 40px;
+	height: 50px;
+}
+.userAvatarAdminPage {
+	width: 60px;
+	height: 60px;
+}
+.listButnAdminPage {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.titleAdminUserAvatar {
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+/*Конец, административный интерфейс*/
+/*Мои подписки*/
+.itemSubscribe {
+	margin-bottom: 10px;
+}
+.headerItemSubscribe {
+	padding: 5px;
+	background-color: #C7C7C7;
+	overflow: hidden;
+	position: relative;
+	height: 30px;
+	border: #1A4771 1px solid;
+	border-radius: 5px;
+}
+.headerItemSubscribe > div{
+	float: left;
+	margin-top: 4px;
+}
+.unsibscribeBtn {
+	position: absolute;
+	right: 20px;
+	border: #1A4771 1px solid;
+	margin-top: auto !important;
+}
+.contentItemSubscribe {
+	margin-top: 5px;
+	overflow: hidden;
+}
+.contentItemSubscribe > div {
+	float: left;
+}
+.divImgItemSubscribe, #settingsAvataLabel {
+	height: 250px;
+	width: 300px;
+	padding: 10px;
+	border: #1A4771 1px solid;
+	border-radius: 5px;
+}
+.imgItemSubscribe, #settingsImageAvatar {
+	height: inherit;
+	width: inherit;
+	border-radius: 5px;
+}
+.titleImgItemSubscribe {
+	height: 250px;
+	width: 300px;
+	padding: 10px;
+	position: relative;
+}
+.wrapperTitleImgItemSubscribe {
+	position: absolute;
+	float: left;
+	top: 50%;
+}
+.wrapperTitleImgItemSubscribe > p {
+	padding: 5px;
+	position: relative;
+	top: -50%;
+}
+/*Конец, мои подписки*/
+/*Настройки*/
+#privateUserSettings {
+	overflow: hidden;
+}
+#privateUserSettings > div {
+	float: left;
+}
+#privateUserSettings a {
+	text-decoration: none;
+}
+#settingsAvataLabel {
+	display: block;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.userSettingsChangePassword, .userSettingsChangeEmail {
+	width: 130px;
+	margin-bottom: 5px;
+	border: #1A4771 1px solid;
+	border-radius: 5px;
+	text-align: center;
+}
+#settingsAvatarFile {
+	display: none;
+}
+#contentSettings {
+	padding-top: 10px;
+	padding-left: 40px;
+}
+.wrapperLineUserSettingsForm {
+	margin-bottom: 15px;
+}
+.labelInfoUserSettings {
+	color: #000;
+}
+.labelUserSettings {
+	display: inline-block;
+	width: 150px;
+}
+/*Конец, настройки*/
