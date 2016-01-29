@@ -723,3 +723,6 @@ body {
 	text-shadow: none !important;
 }
 /*Конец, информационные и предупреждающие сообщения*/
+.noCursorUserProfile {
+	cursor: default !important;
+}
