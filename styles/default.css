@@ -254,7 +254,7 @@ body {
 	height: 2em;
 	outline: solid red 0px;
 }
-#signUpForm label, #signInForm label
+#signUpForm label, #signInForm label, #settingsChangePasswordForm label, #settingsChangeEmailForm label, #restoreForm label
 {
 	position: absolute;
 	margin: auto .7em auto 0;
@@ -269,12 +269,12 @@ body {
 #signUpForm label {
 	width: 280px;
 }
-#signUpForm input, #signInForm input {
+#signUpForm input, #signInForm input, #settingsChangePasswordForm input, #settingsChangeEmailForm input, #restoreForm input {
 	position: absolute;
 	vertical-align: bottom;
 }
-/*В том числе и для input формы поиска списка пользователей в административном интерфейсе*/
-#signUpForm input, #signInForm input,  #serchAdminUserInput{
+/*В том числе и для input формы поиска списка пользователей в административном интерфейсе, настройки*/
+#signUpForm input, #signInForm input,  #settingsChangePasswordForm input, #settingsChangeEmailForm input, #restoreForm input, #serchAdminUserInput{
 	height: 1.5em;
 	border-radius: 5px;
 	color: #1A4771;
@@ -316,7 +316,6 @@ body {
 #signInForm {
 	width: 275px;
 	height: 125px;
-	/*position: relative;*/
 }
 #signInForm label {
 	width: 120px;
@@ -450,12 +449,12 @@ body {
 	background-image: url(../img/addFile.png);
 }
 /*Кнопки используемые в т.ч. и на страницах 'albom', 'settings', 'subscribs'*/
-.sendCommentBtn, .unsibscribeBtn, .userSettingsChangePassword, .userSettingsChangeEmail, .hederComment, .answerCommentBtn, #cancelAnswer {
+.sendCommentBtn, .unsibscribeBtn, .userSettingsChangePassword, .userSettingsChangeEmail, .userSettingsRestore, .hederComment, .answerCommentBtn, #cancelAnswer {
 	padding: 5px 5px 8px 5px;
 	background-color: #C7C7C7;
 	border-radius: 5px;
 }
-.sendCommentBtn:hover, .userSettingsChangePassword:hover, .userSettingsChangeEmail:hover, .unsibscribeBtn:hover, .answerCommentBtn:hover, #cancelAnswer:hover {
+.sendCommentBtn:hover, .userSettingsChangePassword:hover, .userSettingsChangeEmail:hover, .userSettingsRestore:hover, .unsibscribeBtn:hover, .answerCommentBtn:hover, #cancelAnswer:hover {
 	background-color: #1A4771;
 	color: white;
 }
@@ -671,12 +670,13 @@ body {
 	cursor: pointer;
 	margin-bottom: 10px;
 }
-.userSettingsChangePassword, .userSettingsChangeEmail {
+.userSettingsChangePassword, .userSettingsChangeEmail, .userSettingsRestore {
 	width: 130px;
 	margin-bottom: 5px;
 	border: #1A4771 1px solid;
 	border-radius: 5px;
 	text-align: center;
+	cursor: pointer;
 }
 #settingsAvatarFile {
 	display: none;
@@ -695,4 +695,31 @@ body {
 	display: inline-block;
 	width: 150px;
 }
+/*Форма изменения пароля*/
+#settingsChangePasswordForm input {
+	left: 250px;
+	width: 280px;
+}
+#wrapperChangePasswordForm, #wrapperChangeEmailForm, #wrapperRestoreForm {
+	margin-top: 30px;
+}
+/*Конец, форма изменения пароля*/
+/*Форма изменения email*/
+#settingsChangeEmailForm input {
+	left: 152px;
+	width: 200px;
+}
+/*Конец, форма изменения email*/
+/*Форма восстановления email*/
+#restoreForm input {
+	left: 280px;
+	width: 150px;
+}
+/*Конец, форма восстановления email*/
 /*Конец, настройки*/
+/*Информационные и предупреждающие сообщения*/
+.emphasisMsg {
+	color: red !important;
+	text-shadow: none !important;
+}
+/*Конец, информационные и предупреждающие сообщения*/

@@ -7,6 +7,9 @@ function init() {
 	initAlbomPage();
 	initAdministratePage();
 	initUserSettingsPage();
+	initChangePasswordPage();
+	initChangeEmailPage();
+	initRestorePage();
 }
 
 //Установка колонкам однинаковой высоты
@@ -139,7 +142,7 @@ function initAlbomPage() {
 		var htmlFormAnswerComment;
 		var parentCommentId = $(event.currentTarget).attr('data-comment-id');
 		var htmlFormAnswerComment = '' +
-		'<form id="addCommentFormAnswer" class="addCommentForm" action="" method="post" enctype="multipart/form-data">' +
+		'<form id="addCommentFormAnswer" class="addCommentForm" action="' + $('#addCommentForm').attr('action') + '" method="post" enctype="multipart/form-data">' +
 			'<textarea name="comment" class="addingText commonText" placeholder="Введите комментарий" rows="4"></textarea><br/>' +
 			'<div class="sendCommentBtn commonText itemLineBtnCommentForm">Добавить комментарий</div>' +
 			'<div id="cancelAnswer" class="commonText itemLineBtnCommentForm">Отмена</div>' +
@@ -156,9 +159,25 @@ function initAlbomPage() {
 	$('#imgFiles').change(function(event) {
 		$(event.currentTarget).parent().submit();
 	});
+	// Обработка щелчка по кнопке +5 к изображению
+	$('#marked').click(function(event) {
+		if(!checkCanAbleUserMark()){
+			event.preventDefault();
+			$().toastmessage('showToast', {
+			    text     : 'Вы уже оценивали это изображение ранее!',
+			    sticky   : false,
+			    type     : 'warning',
+			    close    : function () { }
+			});
+		}
+	});
 }
-var valueCommentFile = '';
+// Функция проверки возможности поставить оценку, функция заправшивает у сервера может ли текущий пользователь добавить +5 к оценке изображения
+function checkCanAbleUserMark() {
+	return false;
+}
 // Обработка отправки комментария
+var valueCommentFile = '';
 function handelSubmitForm(event){
 	var target = $(event.currentTarget);
 	var commentText = target.parent().find('textarea').val();
@@ -170,8 +189,9 @@ function handelSubmitForm(event){
 function handelChangeFile(event) {
 	var target = $(event.currentTarget);
 	if(valueCommentFile.length == 0){
-		$('<img src="img/attachment.png" class="imgCommentFile itemLineBtnCommentForm" title="Добавленный файл"/>').insertBefore(target);
-		$('imgCommentFile').click(handelClickFileBtn);
+		var pathToImgForFileComment = $('#addCommentForm').attr('data-img-for-comment-file');
+		$('<img src="' + pathToImgForFileComment + '" class="imgCommentFile itemLineBtnCommentForm" title="Добавленный файл"/>').insertBefore(target);
+		$('.imgCommentFile').click(handelClickFileBtn);
 		target.parent().find('img').click(function() {
 			$('#confirmDeleteFile').dialog({
 				height: 160,
@@ -205,6 +225,7 @@ function handelClickFileBtn(event){
 	var valueFile = target.parent().find('input').val();
 	valueCommentFile = valueFile;
 }
+// Инициализация страницы списка пользователей
 function initAdministratePage() {
 	$('#serchAdminUserBtn').click(function(event) {
 		var target = $(event.currentTarget).parent().find('input');
@@ -218,9 +239,88 @@ function initAdministratePage() {
 		source: tempUserList
 	});
 }
+// Инициализация страницы настроек пользователя
 function initUserSettingsPage() {
 	// Обработка загрузки файла аватара
 	$('#settingsAvatarFile').change(function(event) {
 		$(event.currentTarget).parent().submit();
 	});
+}
+// Инициализация страницы смены пароля
+function initChangePasswordPage() {
+	$('#settingsChangePasswordForm').validate({
+		rules: {
+			oldUserPassword: {
+				required: true,
+				minlength: 6
+			},
+			userPassword: {
+				required: true,
+				minlength: 6
+			},			
+			userRetryPassword: {
+				equalTo: '#settingsUserPassword'
+			}
+
+		},
+		messages: {
+			oldUserPassword: {
+				required: 'Введите действующий пароль',
+				minlength: 'Пароль должен содержать не менее 6 символов'
+			},			
+			userPassword: {
+				required: 'Введите новый пароль',
+				minlength: 'Пароль должен содержать не менее 6 символов'
+			},
+			userRetryPassword: {
+				equalTo: 'Подтверждение пароля не совпадает с введеным паролем'
+			}
+		},
+		errorPlacement: errorMsgValidFormOutput
+	});
+	$('#settingsChangePasswordBtn').click(function(event){
+		$(event.currentTarget).parent().submit();
+	});
+}
+// Инициализация страницы смены e-mail
+function initChangeEmailPage() {
+	$('#settingsChangeEmailForm').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			email: {
+				required: 'Введите адрес электронной почты',
+				email: 'Поле "Почта" должно содержать адрес электронной почты'
+			}
+		},
+		errorPlacement: errorMsgValidFormOutput
+	});
+	$('#settingsChangeEmaildBtn').click(function(event){
+		$(event.currentTarget).parent().submit();
+	});	
+}
+// Инициализация страницы восстановления доступа
+function initRestorePage() {
+	$('#restoreForm').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			email: {
+				required: 'Введите адрес электронной почты',
+				email: 'Поле "Почта" должно содержать адрес электронной почты'
+			}
+		},
+		errorPlacement: errorMsgValidFormOutput
+	});
+	$('#settingsRestoreBtn').click(function(event){
+		$(event.currentTarget).parent().submit();
+	});	
 }
