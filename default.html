@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="scripts/jquery-ui.structure.css"/>
 	<link rel="stylesheet" type="text/css" href="scripts/jquery-ui.theme.css"/>
 	<script type="text/javascript" src="scripts/jquery.validate.js"></script>
+	<!-- lightbox подключается пере закрывающим тегом body -->
+	<link rel="stylesheet" type="text/css" href="styles/lightbox.css"/>		
 	<script type="text/javascript" src="scripts/project.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/default.css"/>
 </head>
@@ -93,7 +95,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/1.jpg"/><br/>
+						<a href="img/imgForGrid/1.jpg" data-lightbox="image-1" data-title="Изображение 1">
+							<img src="img/imgForGrid/1.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 1</i>
 						</a>
@@ -103,7 +107,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/2.jpg"/><br/>
+						<a href="img/imgForGrid/2.jpg" data-lightbox="image-2" data-title="Изображение 2">
+							<img src="img/imgForGrid/2.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 2</i>
 						</a>
@@ -113,7 +119,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/3.jpg"/><br/>
+						<a href="img/imgForGrid/3.jpg" data-lightbox="image-3" data-title="Изображение 3">
+							<img src="img/imgForGrid/3.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 3</i>
 						</a>
@@ -123,7 +131,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/4.jpg"/><br/>
+						<a href="img/imgForGrid/4.jpg" data-lightbox="image-4" data-title="Изображение 4">
+							<img src="img/imgForGrid/4.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 4</i>
 						</a>
@@ -133,9 +143,11 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/9.jpg"/><br/>
+						<a href="img/imgForGrid/5.jpg" data-lightbox="image-5" data-title="Изображение 5">
+							<img src="img/imgForGrid/5.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
-							<i>Изображение 1</i>
+							<i>Изображение 5</i>
 						</a>
 					</div>
 					<div class="itemWrapper commonText">
@@ -143,7 +155,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/10.jpg"/><br/>
+						<a href="img/imgForGrid/10.jpg" data-lightbox="image-10" data-title="Изображение 10">
+							<img src="img/imgForGrid/10.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 2</i>
 						</a>
@@ -153,7 +167,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/11.jpg"/><br/>
+						<a href="img/imgForGrid/11.jpg" data-lightbox="image-11" data-title="Изображение 11">
+							<img src="img/imgForGrid/11.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 3</i>
 						</a>
@@ -163,7 +179,9 @@
 						<a href="" title="Перейти к профелю пользователя">
 							<i class="itemUserName">Пользователь</i>
 						</a><br/>
-						<img src="img/imgForGrid/12.jpg"/><br/>
+						<a href="img/imgForGrid/12.jpg" data-lightbox="image-12" data-title="Изображение 12">
+							<img src="img/imgForGrid/12.jpg"/>
+						</a><br/>
 						<a href="" title="Перейти к альбому">
 							<i>Изображение 4</i>
 						</a>
@@ -232,5 +250,6 @@
 			<br/><a href="restorepassword.html" class="forgotPassword">Забыли пароль?</a>
 		</form>
 	</div>
+	<script type="text/javascript" src="scripts/lightbox.js"></script>
 </body>
 </html>
